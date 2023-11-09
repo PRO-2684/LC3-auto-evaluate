@@ -14,8 +14,8 @@ def parse_args():
                         help="Path to your directory of testcases (default ./tests/lab1/).")
     parser.add_argument("--target", type=str, default="./student/",
                         help="Path to codes you'd like to evaluate (default ./student/).")
-    parser.add_argument("--output", type=str, default="./output/",
-                        help="Path to output directory (default ./output/).")
+    # parser.add_argument("--output", type=str, default="./output/",
+    #                     help="Path to output directory (default ./output/).")
     # parser.add_argument("--timeout", type=int, default=10,
     #                     help="Timeout for each testcase.")
     return parser.parse_args()
