@@ -10,9 +10,9 @@ DELIMITER = "=" * get_terminal_size().columns
 subprocess.check_output
 def parse_args():
     parser = ArgumentParser(description="Batch evaluate LC3 codes.")
-    parser.add_argument("--test", type=str, default="./tests/lab1/",
-                        help="Path to your directory of testcases (default ./tests/lab1/).")
-    parser.add_argument("--target", type=str, default="./student/",
+    parser.add_argument("--data", "-d", type=str, required=True,
+                        help="Path to your json of testcases (e.g. ./tests/lab1.json).")
+    parser.add_argument("--target", "-t", type=str, default="./student/",
                         help="Path to codes you'd like to evaluate (default ./student/).")
     # parser.add_argument("--output", type=str, default="./output/",
     #                     help="Path to output directory (default ./output/).")
@@ -26,11 +26,8 @@ def sanitize(name: str) -> str:
 
 def loadTestcases(test_dir: Path) -> dict:
     testcases = {}
-    for file in test_dir.iterdir():
-        if file.suffix != ".json":
-            continue
-        with open(file, "r") as f:
-            testcases[file.stem] = load(f)
+    with open(test_dir, "r") as f:
+        testcases = load(f)
     return testcases
 
 def compileTestcases(testcases: dict, name: str) -> bool:
@@ -87,18 +84,18 @@ def evaluate(name: str, target_dir: Path) -> bool:
             continue
         targets[target_path.stem] = target_path.absolute()
 
-    print(f"Evaluating {len(targets)} targets at {name}...")
+    print(f"Evaluating {len(targets)} targets at {name}...", end="\r")
 
     data = {}
     for target_name, target_path in targets.items():
-        print(f"Evaluating {target_name}...")
+        print(f"Evaluating {target_name}...", end="\r")
         out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=10, encoding="utf-8")
         m = search(r"Total points earned: (\d+)/(\d+)", out)
         score = 0
         if m:
             score = int(m.group(1))
         data[target_name] = score
-        print(f"{target_name} score: {score}")
+        print(f"{target_name} score: {score}        ")
 
     with open(target_dir / f"{name}.json", "w") as f:
         dump(data, f, indent=4, ensure_ascii=False)
@@ -115,7 +112,7 @@ def cleanUp(target_dir: Path) -> bool:
 
 if __name__ == "__main__":
     args = parse_args()
-    test_dir = Path(args.test) # Directory of testcases
+    test_dir = Path(args.data) # Directory of testcases
     target_dir = Path(args.target) # Directory of codes to evaluate
     # timeout = args.timeout
     testcases = loadTestcases(test_dir)

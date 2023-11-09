@@ -1,0 +1,24 @@
+{
+    "case1": {
+        "points": 10,
+        "mem_init": {
+            "0x3100": "0x5464"
+        },
+        "mem_expected": {
+            "0x3102": "7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case2": {
+        "points": 20,
+        "mem_init": {
+            "0x3100": "0x1000"
+        },
+        "mem_expected": {
+            "0x3102": "12"
+        },
+        "input": "",
+        "output": ""
+    }
+}

@@ -24,12 +24,13 @@ Automatically evaluate lc3 codes
 ## Usage
 
 ```
-usage: evaluate.py [-h] [--test TEST] [--target TARGET]
+usage: evaluate.py [-h] --data DATA [--target TARGET]
 
 Batch evaluate LC3 codes.
 
 optional arguments:
-  -h, --help       show this help message and exit
-  --test TEST      Path to your directory of testcases (default ./tests/lab1/).
-  --target TARGET  Path to codes you'd like to evaluate (default ./student/).
+  -h, --help            show this help message and exit
+  --data DATA, -d DATA  Path to your json of testcases (e.g. ./tests/lab1.json).
+  --target TARGET, -t TARGET
+                        Path to codes you'd like to evaluate (default ./student/).
 ```
