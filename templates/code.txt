@@ -1,0 +1,24 @@
+/*
+ * Copyright 2020 McGraw-Hill Education. All rights reserved. No reproduction or distribution without the prior written consent of McGraw-Hill Education.
+ */
+#define API_VER 2
+#include "framework.h"
+
+{{testFunc}}
+
+void testBringup(lc3::sim & sim) {
+    // Set up initial PC
+    sim.writePC(0x3000);
+
+    // Limit the number of instructions simulated
+    sim.setRunInstLimit(50000);
+}
+
+void testTeardown(lc3::sim &) { }
+
+void setup(Tester & tester) {
+    // Register test cases
+{{testReg}}
+}
+
+void shutdown(void) { }

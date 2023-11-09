@@ -1,0 +1,11 @@
+{
+    "points": 10,
+    "mem_init": {
+        "0x3100": "0x5464"
+    },
+    "mem_expected": {
+        "0x3102": "7"
+    },
+    "input": "",
+    "output": ""
+}

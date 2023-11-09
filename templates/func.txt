@@ -1,0 +1,11 @@
+void {{name}}(lc3::sim & sim, Tester & tester, double total_points)
+{
+    // Initialize values
+{{initMem}}
+
+    // Run test case
+    sim.run();
+
+    // Verify result
+{{verify}}
+}
