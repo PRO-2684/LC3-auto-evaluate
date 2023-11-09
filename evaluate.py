@@ -94,7 +94,10 @@ def evaluate(name: str, target_dir: Path) -> bool:
         score = 0
         if m:
             score = int(m.group(1))
-        data[target_name] = score
+        data[target_name] = {
+            "score": score,
+            "log": out
+        }
         print(f"{target_name} score: {score}        ")
 
     with open(target_dir / f"{name}.json", "w") as f:
