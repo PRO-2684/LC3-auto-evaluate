@@ -1,5 +1,6 @@
 # LC3-auto-evaluate
-Automatically evaluate lc3 codes
+
+Automatically evaluate lc3 codes, designed for ICS @ USTC.
 
 ## Setup
 
