@@ -24,13 +24,10 @@ def sanitize(name: str) -> str:
     # Sanitize name to be a valid CPP identifier
     return name.replace("-", "_").replace(".", "_").replace(" ", "_")
 
-def loadTestcases(test_dir: Path) -> dict:
+def generateCode(test_dir: Path) -> str:
     testcases = {}
     with open(test_dir, "r") as f:
         testcases = load(f)
-    return testcases
-
-def compileTestcases(testcases: dict, name: str) -> bool:
     print("Reading templates...")
     with open("./templates/code.txt") as f:
         code = f.read()
@@ -38,6 +35,16 @@ def compileTestcases(testcases: dict, name: str) -> bool:
         func = f.read()
     testFuncs = []
     testRegs = []
+    before = testcases.get("$before")
+    if before:
+        del testcases["$before"]
+    else:
+        before = ""
+    after = testcases.get("$after")
+    if after:
+        del testcases["$after"]
+    else:
+        after = ""
 
     print("Generating code...")
     for testcaseName, testcase in testcases.items():
@@ -56,7 +63,11 @@ def compileTestcases(testcases: dict, name: str) -> bool:
         testRegs.append(f'    tester.registerTest("{testcaseName}", test_{slug}, {testcase["points"]}, false);')
     code = code.replace("{{testFunc}}", "\n\n".join(testFuncs))
     code = code.replace("{{testReg}}", "\n".join(testRegs))
+    code = code.replace("{{before}}", before)
+    code = code.replace("{{after}}", after)
+    return code
 
+def compileTestcases(code: str, name: str) -> bool:
     print("Writing code...")
     current_dir = getcwd()
     chdir(LC3TOOLS / "src/test/tests")
@@ -84,7 +95,7 @@ def evaluate(name: str, target_dir: Path) -> bool:
             continue
         targets[target_path.stem] = target_path.absolute()
 
-    print(f"Evaluating {len(targets)} targets at {name}...", end="\r")
+    print(f"Evaluating {len(targets)} targets at {name}...")
 
     data = {}
     for target_name, target_path in targets.items():
@@ -118,8 +129,8 @@ if __name__ == "__main__":
     test_dir = Path(args.data) # Directory of testcases
     target_dir = Path(args.target) # Directory of codes to evaluate
     # timeout = args.timeout
-    testcases = loadTestcases(test_dir)
-    assert compileTestcases(testcases, test_dir.stem), "Testcases compilation failed."
+    code = generateCode(test_dir)
+    assert compileTestcases(code, test_dir.stem), "Testcases compilation failed."
     assert evaluate(test_dir.stem, target_dir), "Evaluation failed."
     assert cleanUp(target_dir), "Clean up failed."
 

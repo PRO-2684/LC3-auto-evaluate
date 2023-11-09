@@ -12,9 +12,15 @@ void testBringup(lc3::sim & sim) {
 
     // Limit the number of instructions simulated
     sim.setRunInstLimit(50000);
+
+    // Additional work
+{{before}}
 }
 
-void testTeardown(lc3::sim &) { }
+void testTeardown(lc3::sim & sim) {
+    // Additional work
+{{after}}
+}
 
 void setup(Tester & tester) {
     // Register test cases
