@@ -16,8 +16,8 @@ def parse_args():
                         help="Path to codes you'd like to evaluate (default ./student/).")
     # parser.add_argument("--output", type=str, default="./output/",
     #                     help="Path to output directory (default ./output/).")
-    # parser.add_argument("--timeout", type=int, default=10,
-    #                     help="Timeout for each testcase.")
+    parser.add_argument("--timeout", type=int, default=10,
+                        help="Timeout for each testcase.")
     return parser.parse_args()
 
 def sanitize(name: str) -> str:
@@ -88,7 +88,7 @@ def compileTestcases(code: str, name: str) -> bool:
     chdir(current_dir)
     return True
 
-def evaluate(name: str, target_dir: Path) -> bool:
+def evaluate(name: str, target_dir: Path, timeout: int=10) -> bool:
     targets = {}
     for target_path in target_dir.iterdir():
         if not target_path.suffix in [".asm", ".bin"]:
@@ -100,7 +100,7 @@ def evaluate(name: str, target_dir: Path) -> bool:
     data = {}
     for target_name, target_path in targets.items():
         print(f"Evaluating {target_name}...", end="\r")
-        out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=10, encoding="utf-8")
+        out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=timeout, encoding="utf-8")
         m = search(r"Total points earned: (\d+)/(\d+)", out)
         score = 0
         if m:
@@ -118,9 +118,8 @@ def evaluate(name: str, target_dir: Path) -> bool:
     return True
 
 def cleanUp(target_dir: Path) -> bool:
-    for target_path in target_dir.iterdir():
-        if target_path.suffix == ".obj":
-            target_path.unlink()
+    for target_path in target_dir.glob("*.obj"):
+        target_path.unlink()
     print("Clean up done.")
     return True
 
@@ -128,8 +127,8 @@ if __name__ == "__main__":
     args = parse_args()
     test_dir = Path(args.data) # Directory of testcases
     target_dir = Path(args.target) # Directory of codes to evaluate
-    # timeout = args.timeout
+    timeout = args.timeout
     code = generateCode(test_dir)
     assert compileTestcases(code, test_dir.stem), "Testcases compilation failed."
-    assert evaluate(test_dir.stem, target_dir), "Evaluation failed."
+    assert evaluate(test_dir.stem, target_dir, timeout), "Evaluation failed."
     assert cleanUp(target_dir), "Clean up failed."

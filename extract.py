@@ -1,5 +1,5 @@
 from pathlib import Path
-from os import chdir, system
+from os import chdir, system, get_terminal_size
 
 EXT = ".bin"
 
@@ -31,14 +31,25 @@ for f in cwd.iterdir():
 # Unzip and organize
 temp = Path("temp")
 temp.mkdir(exist_ok=True)
+notFound = []
 for zipFile in zipFiles:
     system(f"unzip {zipFile} -d temp")
+    found = False
     # Find files with EXT
     for f in temp.rglob(f"*{EXT}"):
+        if f.stem.startswith("."):
+            continue # Skip hidden file
         # Rename like: *.bin -> pbxxxxxxxx.bin and move to cwd
         newName = zipFile.stem + EXT
         f = f.rename(cwd / newName)
-        # Clean temp
-        system(f"rm -rf student/temp/*")
+        found = True
         break
+    # Clean temp
+    system("rm -rf temp/*")
+    if not found:
+        notFound.append(zipFile.stem)
     zipFile.unlink()
+
+print("=" * get_terminal_size().columns)
+for f in notFound:
+    print(f"Student {f}'s file not found")

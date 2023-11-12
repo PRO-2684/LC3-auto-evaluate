@@ -15,6 +15,9 @@ for fname, out in data.items():
         continue
     stuId = stu.group(1)
     stuEnd = int(stuId[-1])
-    mem = int(search(PTRN_MEM, out).group(1))
-    if not stuEnd == mem:
+    m = search(PTRN_MEM, out)
+    mem = int(m.group(1)) if m else -1
+    if mem == -1:
+        print(f"Student {stuId} gave no answer")
+    elif not stuEnd == mem:
         print(f'Student {stuId} gave wrong answer "{mem}" (expected "{stuEnd}")')
