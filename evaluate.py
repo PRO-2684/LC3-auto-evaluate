@@ -133,6 +133,3 @@ if __name__ == "__main__":
     assert compileTestcases(code, test_dir.stem), "Testcases compilation failed."
     assert evaluate(test_dir.stem, target_dir), "Evaluation failed."
     assert cleanUp(target_dir), "Clean up failed."
-
-    #     print(f"Cleaning up {target_name}...")
-    #     obj_path.unlink()
