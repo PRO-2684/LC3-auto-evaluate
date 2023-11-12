@@ -1,42 +1,42 @@
 {
     "$after": "std::cout << \"\\nMem[0x3101]=\" << sim.readMem(0x3101) << std::endl;",
     "case1": {
-        "points": 10,
+        "points": 2,
         "mem_init": {
-            "0x3100": "0x5464"
+            "0x3100": "0x0141"
         },
         "mem_expected": {
-            "0x3102": "sim.readMem(0x3101) + 7"
+            "0x3102": "sim.readMem(0x3101) + 13"
         },
         "input": "",
         "output": ""
     },
     "case2": {
-        "points": 10,
+        "points": 2,
         "mem_init": {
-            "0x3100": "0x1000"
+            "0x3100": "0x1300"
         },
         "mem_expected": {
-            "0x3102": "sim.readMem(0x3101) + 12"
+            "0x3102": "sim.readMem(0x3101) + 10"
         },
         "input": "",
         "output": ""
     },
     "case3": {
-        "points": 10,
+        "points": 2,
         "mem_init": {
-            "0x3100": "0x7777"
+            "0x3100": "0x46df"
         },
         "mem_expected": {
-            "0x3102": "sim.readMem(0x3101) + 4"
+            "0x3102": "sim.readMem(0x3101) + 6"
         },
         "input": "",
         "output": ""
     },
     "case4": {
-        "points": 10,
+        "points": 2,
         "mem_init": {
-            "0x3100": "0x7888"
+            "0x3100": "0x699a"
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
@@ -45,12 +45,507 @@
         "output": ""
     },
     "case5": {
-        "points": 10,
+        "points": 2,
         "mem_init": {
-            "0x3100": "0x7dbc"
+            "0x3100": "0x00d2"
         },
         "mem_expected": {
-            "0x3102": "sim.readMem(0x3101) + 12"
+            "0x3102": "sim.readMem(0x3101) + 4"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case6": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x1be7"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 6"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case7": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x2f1a"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case8": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7c19"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case9": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x5fe6"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 11"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case10": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x64ee"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case11": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x50a7"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case12": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x1723"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case13": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x2fdc"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 11"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case14": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x737e"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 11"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case15": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x513f"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case16": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x4997"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case17": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7688"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case18": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x0fb2"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case19": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x1add"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case20": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x17ec"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 10"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case21": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x49ee"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case22": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7c33"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case23": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x44c4"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 6"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case24": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x310a"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 5"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case25": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x23f8"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 10"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case26": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7bf3"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 4"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case27": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x501f"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case28": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x152d"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case29": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x787c"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 10"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case30": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x12f3"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case31": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7a72"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case32": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x58b2"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case33": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x0163"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 11"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case34": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x62af"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case35": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x28e5"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case36": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7c0f"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case37": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x20b8"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case38": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x3e7b"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 5"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case39": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x4525"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 10"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case40": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x6cfa"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 10"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case41": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x2bad"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case42": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x0bde"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 9"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case43": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x1888"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 6"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case44": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x0329"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 11"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case45": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x6a52"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case46": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x62bd"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 7"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case47": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x6381"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 10"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case48": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x0686"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 5"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case49": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x6c8b"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case50": {
+        "points": 2,
+        "mem_init": {
+            "0x3100": "0x7a0b"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
         },
         "input": "",
         "output": ""
