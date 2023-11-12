@@ -12,9 +12,42 @@
         "output": ""
     },
     "case2": {
-        "points": 20,
+        "points": 10,
         "mem_init": {
             "0x3100": "0x1000"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 12"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case3": {
+        "points": 10,
+        "mem_init": {
+            "0x3100": "0x7777"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 4"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case4": {
+        "points": 10,
+        "mem_init": {
+            "0x3100": "0x7888"
+        },
+        "mem_expected": {
+            "0x3102": "sim.readMem(0x3101) + 8"
+        },
+        "input": "",
+        "output": ""
+    },
+    "case5": {
+        "points": 10,
+        "mem_init": {
+            "0x3100": "0x7dbc"
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 12"
