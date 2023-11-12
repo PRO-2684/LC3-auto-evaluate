@@ -3,10 +3,11 @@ from pathlib import Path
 from argparse import ArgumentParser
 from json import load, dump
 from os import chdir, getcwd, get_terminal_size
-from re import search
+from re import search, compile
 
 LC3TOOLS = Path("/home/ubuntu/lc3tools/")
 DELIMITER = "=" * get_terminal_size().columns
+PATTERN = compile(r"Total points earned: (\d+)/(\d+)")
 subprocess.check_output
 def parse_args():
     parser = ArgumentParser(description="Batch evaluate LC3 codes.")
@@ -100,8 +101,16 @@ def evaluate(name: str, target_dir: Path, timeout: int=10) -> bool:
     data = {}
     for target_name, target_path in targets.items():
         print(f"Evaluating {target_name}...", end="\r")
-        out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=timeout, encoding="utf-8")
-        m = search(r"Total points earned: (\d+)/(\d+)", out)
+        try:
+            out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=timeout, encoding="utf-8")
+        except subprocess.TimeoutExpired:
+            print(f"{target_name} timed out.        ")
+            data[target_name] = {
+                "score": 0,
+                "log": "Evaluation timed out."
+            }
+            continue
+        m = search(PATTERN, out)
         score = 0
         if m:
             score = int(m.group(1))
