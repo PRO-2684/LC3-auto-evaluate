@@ -5,10 +5,11 @@ from json import load, dump
 from os import chdir, getcwd, get_terminal_size
 from re import search, compile
 
+EXTS = [".asm"]
 LC3TOOLS = Path("/home/ubuntu/lc3tools/")
 DELIMITER = "=" * get_terminal_size().columns
 PATTERN = compile(r"Total points earned: (\d+)/(\d+)")
-subprocess.check_output
+
 def parse_args():
     parser = ArgumentParser(description="Batch evaluate LC3 codes.")
     parser.add_argument("--data", "-d", type=str, required=True,
@@ -92,7 +93,7 @@ def compileTestcases(code: str, name: str) -> bool:
 def evaluate(name: str, target_dir: Path, timeout: int=10) -> bool:
     targets = {}
     for target_path in target_dir.iterdir():
-        if not target_path.suffix in [".asm", ".bin"]:
+        if not target_path.suffix in EXTS:
             continue
         targets[target_path.stem] = target_path.absolute()
     n = len(targets)
