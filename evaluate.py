@@ -91,38 +91,41 @@ def compileTestcases(code: str, name: str) -> bool:
     return True
 
 def evaluate(name: str, target_dir: Path, timeout: int=10) -> bool:
-    targets = {}
-    for target_path in target_dir.iterdir():
-        if not target_path.suffix in EXTS:
-            continue
-        targets[target_path.stem] = target_path.absolute()
-    n = len(targets)
-    print(f"Evaluating {n} targets at {name}...")
+    try:
+        targets = {}
+        for target_path in target_dir.iterdir():
+            if not target_path.suffix in EXTS:
+                continue
+            targets[target_path.stem] = target_path.absolute()
+        n = len(targets)
+        print(f"Evaluating {n} targets at {name}...")
 
-    data = {}
-    i = 0
-    for target_name, target_path in targets.items():
-        i += 1
-        print(f"Evaluating {target_name}... ({i}/{n})", end="\r")
-        try:
-            out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=timeout, encoding="utf-8")
-        except subprocess.TimeoutExpired:
-            print(f"{target_name} timed out.                     ")
+        data = {}
+        i = 0
+        for target_name, target_path in targets.items():
+            i += 1
+            print(f"Evaluating {target_name}... ({i}/{n})", end="\r")
+            try:
+                out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=timeout, encoding="utf-8")
+            except subprocess.TimeoutExpired:
+                print(f"{target_name} timed out.                     ")
+                data[target_name] = {
+                    "score": 0,
+                    "log": "Evaluation timed out."
+                }
+                continue
+            m = search(PATTERN, out)
+            score = 0
+            if m:
+                score = int(m.group(1))
             data[target_name] = {
-                "score": 0,
-                "log": "Evaluation timed out."
+                "score": score,
+                "log": out
             }
-            continue
-        m = search(PATTERN, out)
-        score = 0
-        if m:
-            score = int(m.group(1))
-        data[target_name] = {
-            "score": score,
-            "log": out
-        }
-        print(f"{target_name} score: {score}                 ")
+            print(f"{target_name} score: {score}                 ")
 
+    except KeyboardInterrupt:
+        print("Evaluation interrupted.")
     with open(target_dir / f"{name}.json", "w") as f:
         dump(data, f, indent=4, ensure_ascii=False)
 
