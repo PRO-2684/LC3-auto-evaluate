@@ -16,8 +16,8 @@ def parse_args():
                         help="Path to your json of testcases (e.g. ./tests/lab1.json).")
     parser.add_argument("--target", "-t", type=str, default="./student/",
                         help="Path to codes you'd like to evaluate (default ./student/).")
-    # parser.add_argument("--output", type=str, default="./output/",
-    #                     help="Path to output directory (default ./output/).")
+    parser.add_argument("--compile", "-c", action="store_true",
+                        help="Compile testcases. Used when you have modified your testcases.")
     parser.add_argument("--timeout", type=int, default=10,
                         help="Timeout for each testcase.")
     return parser.parse_args()
@@ -143,7 +143,11 @@ if __name__ == "__main__":
     test_dir = Path(args.data) # Directory of testcases
     target_dir = Path(args.target) # Directory of codes to evaluate
     timeout = args.timeout
-    code = generateCode(test_dir)
-    assert compileTestcases(code, test_dir.stem), "Testcases compilation failed."
+    if args.compile:
+        code = generateCode(test_dir)
+        assert compileTestcases(code, test_dir.stem), "Testcases compilation failed."
+    else:
+        assert (LC3TOOLS / "build/bin/" / test_dir.stem).exists(), "Testcases not compiled."
+        print("Using existing compiled testcases...")
     assert evaluate(test_dir.stem, target_dir, timeout), "Evaluation failed."
     assert cleanUp(target_dir), "Clean up failed."
