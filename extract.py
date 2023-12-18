@@ -1,5 +1,5 @@
 from pathlib import Path
-from os import chdir, system, get_terminal_size
+from os import chdir, system
 
 chdir("student")
 cwd = Path(".")
