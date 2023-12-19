@@ -7,5 +7,16 @@ void {{name}}(lc3::sim & sim, Tester & tester, double total_points)
     sim.run();
 
     // Verify result
-{{verify}}
+    bool passed = true;
+    std::map<int, int> expected = {
+{{expect}}
+    };
+    for (auto const& [addr, val] : expected) {
+        if (sim.readMem(addr) != val) {
+            passed = false;
+            std::printf("Expected 0x%04x at address 0x%04x, got 0x%04x\n", val, addr, sim.readMem(addr));
+            break;
+        }
+    }
+    tester.verify("case1", passed, total_points);
 }

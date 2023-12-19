@@ -166,3 +166,5 @@ simulator
 student/
 # Configuration
 config.json
+# VS Code
+.vscode/

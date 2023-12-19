@@ -53,14 +53,14 @@ def generateCode(test_dir: Path) -> str:
         slug = sanitize(testcaseName)
         testFunc = func
         initMems = []
-        verifies = []
+        expected = []
         for addr, val in testcase["mem_init"].items():
             initMems.append(f"    sim.writeMem({addr}, {val});")
         for addr, val in testcase["mem_expected"].items():
-            verifies.append(f'    tester.verify("{testcaseName}_{addr}", sim.readMem({addr}) == {val}, total_points);')
+            expected.append(f'        {{{addr}, {val}}},')
         testFunc = testFunc.replace("{{name}}", "test_" + slug)
         testFunc = testFunc.replace("{{initMem}}", "\n".join(initMems))
-        testFunc = testFunc.replace("{{verify}}", "\n".join(verifies))
+        testFunc = testFunc.replace("{{expect}}", "\n".join(expected))
         testFuncs.append(testFunc)
         testRegs.append(f'    tester.registerTest("{testcaseName}", test_{slug}, {testcase["points"]}, false);')
     code = code.replace("{{testFunc}}", "\n\n".join(testFuncs))
