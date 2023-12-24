@@ -34,4 +34,8 @@ optional arguments:
   --data DATA, -d DATA  Path to your json of testcases (e.g. ./tests/lab1.json).
   --target TARGET, -t TARGET
                         Path to codes you'd like to evaluate (default ./student/).
+  --compile, -c         Compile testcases. Used when you have modified your testcases.
+  --timeout TIMEOUT     Timeout for each testcase.
+  --ignore-privilege    Ignore privileged mode.
+  --store-output        Store output of given programs in log.
 ```

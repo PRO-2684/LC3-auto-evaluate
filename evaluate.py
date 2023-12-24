@@ -22,8 +22,8 @@ def parse_args():
                         help="Timeout for each testcase.")
     parser.add_argument("--ignore-privilege", action="store_true",
                         help="Ignore privileged mode.")
-    parser.add_argument("--print-output", action="store_true",
-                        help="Print output of given programs.")
+    parser.add_argument("--store-output", action="store_true",
+                        help="Store output of given programs in log.")
     return parser.parse_args()
 
 def sanitize(name: str) -> str:
@@ -112,7 +112,7 @@ def evaluate(name: str, target_dir: Path, timeout: int=10) -> bool:
             startArgs = [LC3TOOLS / "build/bin/" / name, target_path]
             if args.ignore_privilege:
                 startArgs.append("--ignore-privilege")
-            if args.print_output:
+            if args.store_output:
                 startArgs.append("--print-output")
             # print(f"Running {' '.join([str(arg) for arg in startArgs])}")
             try:
