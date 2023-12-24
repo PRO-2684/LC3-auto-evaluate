@@ -65,6 +65,10 @@ def generateCode(test_dir: Path) -> str:
         testFunc = testFunc.replace("{{name}}", "test_" + slug)
         testFunc = testFunc.replace("{{initMem}}", "\n".join(initMems))
         testFunc = testFunc.replace("{{expect}}", "\n".join(expected))
+        if testcase.get("input"):
+            testFunc = testFunc.replace("{{input}}", f'    tester.setInputString("{testcase["input"]}");')
+        else:
+            testFunc = testFunc.replace("{{input}}", "")
         testFuncs.append(testFunc)
         testRegs.append(f'    tester.registerTest("{testcaseName}", test_{slug}, {testcase["points"]}, false);')
     code = code.replace("{{testFunc}}", "\n\n".join(testFuncs))
