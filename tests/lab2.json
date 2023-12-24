@@ -6,9 +6,7 @@
         },
         "mem_expected": {
             "0x3103": "3"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case2": {
         "points": 10,
@@ -17,9 +15,7 @@
         },
         "mem_expected": {
             "0x3103": "8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case3": {
         "points": 10,
@@ -28,9 +24,7 @@
         },
         "mem_expected": {
             "0x3103": "14"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case4": {
         "points": 10,
@@ -39,9 +33,7 @@
         },
         "mem_expected": {
             "0x3103": "3138"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case5": {
         "points": 30,
@@ -50,9 +42,7 @@
         },
         "mem_expected": {
             "0x3103": "2046"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case6": {
         "points": 30,
@@ -61,8 +51,6 @@
         },
         "mem_expected": {
             "0x3103": "4094"
-        },
-        "input": "",
-        "output": ""
+        }
     }
 }

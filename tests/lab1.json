@@ -7,9 +7,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 13"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case2": {
         "points": 2,
@@ -18,9 +16,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case3": {
         "points": 2,
@@ -29,9 +25,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 6"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case4": {
         "points": 2,
@@ -40,9 +34,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case5": {
         "points": 2,
@@ -51,9 +43,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 4"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case6": {
         "points": 2,
@@ -62,9 +52,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 6"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case7": {
         "points": 2,
@@ -73,9 +61,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case8": {
         "points": 2,
@@ -84,9 +70,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case9": {
         "points": 2,
@@ -95,9 +79,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 11"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case10": {
         "points": 2,
@@ -106,9 +88,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case11": {
         "points": 2,
@@ -117,9 +97,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case12": {
         "points": 2,
@@ -128,9 +106,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case13": {
         "points": 2,
@@ -139,9 +115,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 11"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case14": {
         "points": 2,
@@ -150,9 +124,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 11"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case15": {
         "points": 2,
@@ -161,9 +133,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case16": {
         "points": 2,
@@ -172,9 +142,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case17": {
         "points": 2,
@@ -183,9 +151,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case18": {
         "points": 2,
@@ -194,9 +160,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case19": {
         "points": 2,
@@ -205,9 +169,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case20": {
         "points": 2,
@@ -216,9 +178,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case21": {
         "points": 2,
@@ -227,9 +187,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case22": {
         "points": 2,
@@ -238,9 +196,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case23": {
         "points": 2,
@@ -249,9 +205,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 6"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case24": {
         "points": 2,
@@ -260,9 +214,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 5"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case25": {
         "points": 2,
@@ -271,9 +223,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case26": {
         "points": 2,
@@ -282,9 +232,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 4"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case27": {
         "points": 2,
@@ -293,9 +241,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case28": {
         "points": 2,
@@ -304,9 +250,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case29": {
         "points": 2,
@@ -315,9 +259,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case30": {
         "points": 2,
@@ -326,9 +268,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case31": {
         "points": 2,
@@ -337,9 +277,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case32": {
         "points": 2,
@@ -348,9 +286,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case33": {
         "points": 2,
@@ -359,9 +295,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 11"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case34": {
         "points": 2,
@@ -370,9 +304,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case35": {
         "points": 2,
@@ -381,9 +313,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case36": {
         "points": 2,
@@ -392,9 +322,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case37": {
         "points": 2,
@@ -403,9 +331,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case38": {
         "points": 2,
@@ -414,9 +340,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 5"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case39": {
         "points": 2,
@@ -425,9 +349,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case40": {
         "points": 2,
@@ -436,9 +358,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case41": {
         "points": 2,
@@ -447,9 +367,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case42": {
         "points": 2,
@@ -458,9 +376,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 9"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case43": {
         "points": 2,
@@ -469,9 +385,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 6"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case44": {
         "points": 2,
@@ -480,9 +394,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 11"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case45": {
         "points": 2,
@@ -491,9 +403,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case46": {
         "points": 2,
@@ -502,9 +412,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 7"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case47": {
         "points": 2,
@@ -513,9 +421,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 10"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case48": {
         "points": 2,
@@ -524,9 +430,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 5"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case49": {
         "points": 2,
@@ -535,9 +439,7 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     },
     "case50": {
         "points": 2,
@@ -546,8 +448,6 @@
         },
         "mem_expected": {
             "0x3102": "sim.readMem(0x3101) + 8"
-        },
-        "input": "",
-        "output": ""
+        }
     }
 }
