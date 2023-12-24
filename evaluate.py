@@ -20,6 +20,10 @@ def parse_args():
                         help="Compile testcases. Used when you have modified your testcases.")
     parser.add_argument("--timeout", type=int, default=10,
                         help="Timeout for each testcase.")
+    parser.add_argument("--ignore-privilege", action="store_true",
+                        help="Ignore privileged mode.")
+    parser.add_argument("--print-output", action="store_true",
+                        help="Print output of given programs.")
     return parser.parse_args()
 
 def sanitize(name: str) -> str:
@@ -105,8 +109,14 @@ def evaluate(name: str, target_dir: Path, timeout: int=10) -> bool:
         for target_name, target_path in targets.items():
             i += 1
             print(f"Evaluating {target_name}... ({i}/{n})", end="\r")
+            startArgs = [LC3TOOLS / "build/bin/" / name, target_path]
+            if args.ignore_privilege:
+                startArgs.append("--ignore-privilege")
+            if args.print_output:
+                startArgs.append("--print-output")
+            # print(f"Running {' '.join([str(arg) for arg in startArgs])}")
             try:
-                out = subprocess.check_output([LC3TOOLS / "build/bin/" / name, "--ignore-privilege", target_path], timeout=timeout, encoding="utf-8")
+                out = subprocess.check_output(startArgs, timeout=timeout, encoding="utf-8")
             except subprocess.TimeoutExpired:
                 print(f"{target_name} timed out.                     ")
                 data[target_name] = {
