@@ -58,9 +58,9 @@ def generateCode(test_dir: Path) -> str:
         testFunc = func
         initMems = []
         expected = []
-        for addr, val in testcase["mem_init"].items():
+        for addr, val in testcase.get("mem_init", {}).items():
             initMems.append(f"    sim.writeMem({addr}, {val});")
-        for addr, val in testcase["mem_expected"].items():
+        for addr, val in testcase.get("mem_expected", {}).items():
             expected.append(f'        {{{addr}, {val}}},')
         testFunc = testFunc.replace("{{name}}", "test_" + slug)
         testFunc = testFunc.replace("{{initMem}}", "\n".join(initMems))

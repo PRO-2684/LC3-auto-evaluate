@@ -39,3 +39,26 @@ optional arguments:
   --ignore-privilege    Ignore privileged mode.
   --store-output        Store output of given programs in log.
 ```
+
+## Testcases
+
+Testcases are stored in json files. You can find some examples in `tests/`.
+
+```jsonc
+{
+    "$before": "std::cout << \"\\nHello!\" << std::endl;", // Code to be executed before each testcase.
+    "$after": "std::cout << \"\\nMem[0x3101]=\" << sim.readMem(0x3101) << std::endl;", // Code to be executed after each testcase.
+    "case1": {
+        "points": 2, // Points for this testcase. (REQUIRED)
+        "mem_init": { // Initial memory.
+            "0x3100": "0xABCD"
+        },
+        "mem_expected": { // Expected memory after execution.
+            "0x3102": "sim.readMem(0x3101) + 13" // You can use API provided by lc3tools.
+        },
+        "input": "qwertyQWERTY", // Keyboard input for this testcase.
+        "output": "Hello!\nMem[0x3101]=65", // Expected output. (Not implemented yet)
+    },
+    // ...
+}
+```
