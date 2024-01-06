@@ -9,7 +9,7 @@
 
 void testBringup(lc3::sim & sim) {
     // Set up initial PC
-    sim.writePC(0x3000);
+    sim.writePC({{PC}});
 
     // Limit the number of instructions simulated
     sim.setRunInstLimit(50000);

@@ -4,6 +4,7 @@ void {{name}}(lc3::sim & sim, Tester & tester, double total_points)
 {{initMem}}
     // Input
 {{input}}
+{{delay}}
     // Run test case
     sim.run();
 
@@ -19,5 +20,5 @@ void {{name}}(lc3::sim & sim, Tester & tester, double total_points)
             break;
         }
     }
-    tester.verify("case1", passed, total_points);
+    tester.verify("{{name}}", passed, total_points);
 }

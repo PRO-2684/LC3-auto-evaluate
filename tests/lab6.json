@@ -1,0 +1,46 @@
+{
+    "$PC": "0x800",
+
+    "case_0": {
+        "points": 2,
+        "mem_init": {},
+        "mem_expected": {},
+        "delay": 1000,
+        "input": "0"
+    },
+    "case_2": {
+        "points": 2,
+        "mem_init": {},
+        "mem_expected": {},
+        "delay": 1000,
+        "input": "2"
+    },
+    "case_4": {
+        "points": 2,
+        "mem_init": {},
+        "mem_expected": {},
+        "delay": 1000,
+        "input": "4"
+    },
+    "case_6": {
+        "points": 2,
+        "mem_init": {},
+        "mem_expected": {},
+        "delay": 1000,
+        "input": "6"
+    },
+    "case_8": {
+        "points": 2,
+        "mem_init": {},
+        "mem_expected": {},
+        "delay": 1000,
+        "input": "8"
+    },
+    "case_a1": {
+        "points": 2,
+        "mem_init": {},
+        "mem_expected": {},
+        "delay": 1000,
+        "input": "a1"
+    }
+}

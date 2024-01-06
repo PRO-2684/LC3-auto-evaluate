@@ -41,6 +41,11 @@ def generateCode(test_dir: Path) -> str:
         func = f.read()
     testFuncs = []
     testRegs = []
+    pc = testcases.get("$PC")
+    if pc:
+        del testcases["$PC"]
+    else:
+        pc = "0x3000"
     before = testcases.get("$before")
     if before:
         del testcases["$before"]
@@ -69,10 +74,15 @@ def generateCode(test_dir: Path) -> str:
             testFunc = testFunc.replace("{{input}}", f'    tester.setInputString("{testcase["input"]}");')
         else:
             testFunc = testFunc.replace("{{input}}", "")
+        if testcase.get("delay"):
+            testFunc = testFunc.replace("{{delay}}", f'    tester.setInputCharDelay({testcase["delay"]});')
+        else:
+            testFunc = testFunc.replace("{{delay}}", "")
         testFuncs.append(testFunc)
         testRegs.append(f'    tester.registerTest("{testcaseName}", test_{slug}, {testcase["points"]}, false);')
     code = code.replace("{{testFunc}}", "\n\n".join(testFuncs))
     code = code.replace("{{testReg}}", "\n".join(testRegs))
+    code = code.replace("{{PC}}", pc)
     code = code.replace("{{before}}", before)
     code = code.replace("{{after}}", after)
     return code
